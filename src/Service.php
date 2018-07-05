@@ -58,7 +58,7 @@ class Service
     {
         if ($this->instance === null) {
             if (is_string($this->entry) && class_exists($this->entry)) {
-                $this->instance = $this->args ? new $this->entry(...$this->args) : new $this->entry();
+                $this->instance = new $this->entry(...$this->args);
             } else {
                 $this->instance = $this->entry;
             }
